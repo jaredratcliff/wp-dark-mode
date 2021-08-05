@@ -1,0 +1,115 @@
+/*The following code sets the color palate for the site. These color variables are used throughout the rest of the dark mode code.*/
+:root {
+	--jrdark-primary-background: #000000;
+	--jrdark-secondary-background: #222222;
+	--jrdark-third-background: #111111;
+	--jrdark-inverted-background: #ffffff;
+	--jrdark-primary-foreground: #ffffff; /*this should be a neutral color that contrasts with the "--primary-background". If the primary color is dark, this should be white; if the primary color is light, this should be black.*/
+	--jrdark-secondary-foreground: #eeeeee;
+	--jrdark-third-foreground: #aaaaaa;
+	--jrdark-inverted-foreground: #000000;
+	--jrdark-primary-color: #5bc0de;
+	--jrdark-primary-color-dark: #3f869b;
+	--jrdark-secondary-color-dark: purple;
+} /*To include these colors in other CSS, instead of a color name or hex code, write "var(--primary-color)", without quotes. Include the name of the variable color you want. Example: "color: var(--primary-color);" */
+/*For a listing of all recognized CSS colors, visit this link: https://www.w3schools.com/cssref/css_colors.asp // For an explanation of variable colors, go here: https://www.geeksforgeeks.org/how-to-define-colors-as-variables-in-css/ */
+
+/*the dark mode code begins below. Immediately after each line of code, within slashes and asterisks, is a description of the function of that code.*/
+@media (prefers-color-scheme: dark) {
+	.asq-theme.asq-theme-buzzfeed .quiz-question-answer {
+		background-color: var(--jrdark-secondary-background) !important;
+		border: var(--jrdark-secondary-background) !important;
+	} /*ARIquiz plugin: changes appearance of answer options, both standard and hover*/
+	.asq-theme.asq-theme-buzzfeed .quiz-question-answer-selected, .asq-theme.asq-theme-buzzfeed .quiz-question-answer-selected:hover, .asq-theme.asq-theme-buzzfeed .question-completed .quiz-question-answer-selected:hover {
+		background-color: var(--jrdark-primary-color-dark) !important;
+	} /*ARIquiz: changes appearance of SELECTED answer*/
+	.asq-theme.asq-theme-buzzfeed .quiz-section {
+		border: 0px solid !important;
+	} /*ARIquiz: removes border around WRONG or CORRECT label*/
+	.asq-theme.asq-theme-buzzfeed .quiz-result {
+		border: 1px solid !important;
+	} /*ARIquiz: reinforces border around results*/
+	.asq-theme.asq-theme-buzzfeed .quiz-question-answer-correct, .asq-theme.asq-theme-buzzfeed .quiz-question-answer-wrong {
+		color: var(--jrdark-inverted-foreground);
+	} /*ARIquiz: changes text color on CORRECT and WRONG answer*/
+	.asq-theme.asq-theme-buzzfeed .quiz-result {
+		background-color: var(--jrdark-primary-background) !important;
+	} /*ARIquiz: background of results block*/
+	.elementor-divider {
+		filter: invert(50%) !important;
+	} /*Elementor: inverts border color to white*/
+		.elementor-posts .elementor-post__card {
+		background-color: var(--jrdark-secondary-background) !important;
+	} /*Elementor: background color for cards on blog page*/
+		.elementor-posts .elementor-post__excerpt p, .elementor-counter .elementor-counter-number-wrapper {
+		color: var(--jrdark-third-foreground) !important;
+	} /*Elementor: text color for elements: cards on blog page, counter on error page*/
+	.elementor-background-overlay {
+		background-color: var(--jrdark-primary-background) !important; /*#011627 color of normal overlays*/
+		opacity: 0.6;
+	} /*Elementor: overlay settings for images*/
+	.elementor-1324 .elementor-element.elementor-element-69ac680:not(.elementor-motion-effects-element-type-background) {
+		background-color: var(--jrdark-secondary-background) !important;
+	} /*Elementor: web footer settings*/
+	.wpel-icon-1, .wpel-icon-2, .wpel-icon-3, .wpel-icon-4, .wpel-icon-5, .wpel-icon-6 {
+                filter: invert(50%) !important;
+	} /*WP External Links: inverts external link symbol to light. NOT WORKING*/
+	.main-header-bar {
+		background-color: var(--jrdark-primary-background);
+	} /*background for solid-color headers*/
+	.main-header-menu a {
+		color: var(--jrdark-primary-foreground) !important;
+	} /*color of header links or a's*/
+	@media (max-width:921px) {
+		.ast-header-break-point, .main-header-menu, .ast-theme-transparent-header .main-header-menu .menu-link {
+			background-color: var(--jrdark-primary-background) !important;
+		}
+	} /*background color of menu items on devices with a mobile/dropdown menu*/
+	.site-logo-img {
+   filter: invert(100%) !important;
+	} /*inverts site logo (presumably black to white)*/
+	.ast-theme-transparent-header #masthead .site-logo-img .transparent-custom-logo img {
+		filter: invert(100%)
+	} /*inverts site logo on transparent headers a second time to keep it its original color*/
+	body {
+    background-color: var(--jrdark-primary-background) !important;
+    color: var(--jrdark-secondary-foreground);
+  } /*sets background and text color across the site*/
+  a:hover {
+		color: var(--jrdark-primary-foreground);
+	} /*sets color when hovering on links*/
+	a:focus {
+		color: var(--jrdark-primary-foreground);
+	} /*sets color of clicked links*/
+	.entry-meta *:hover, .entry-meta *:focus {
+		color: var(--jrdark-primary-forefround) !important;
+	} /*hover and click color of meta links on search page*/
+	.ast-separate-container .ast-article-single, .ast-article-post, .ast-archive-description, .ast-separate-container .no-results, .ast-separate-container .error-404 {
+		background-color: var(--jrdark-primary-background) !important;
+	} /*sets background color on std Astra pages, like terms or cookie policy, and search pages*/
+	.ast-separate-container .comment-respond {
+		background-color: var(--jrdark-primary-background);
+	} /*sets background color on std Astra comments section*/
+	.entry-title a {
+		color: var(--jrdark-primary-color);
+	} /*color of links on search page*/
+	.entry-title a:hover {
+		color: var(--jrdark-primary-foreground);
+	} /*hover color of links on search page*/
+	textarea, input, input[type="email"], input[type="number"], input[type="password"], input[type="reset"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea:focus, input:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="reset"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, textarea:focus {
+		background-color: var(--jrdark-third-background);
+		color: var(--jrdark-secondary-foreground);
+	} /*sets color of submission boxes (comments, contact, signup, etc)*/
+	h1, h2, h3, h4, h5, h6, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+		color: var(--jrdark-primary-foreground);
+	} /*sets color of headings*/
+	* {
+		transition: background 1000ms ease-in-out, color 250ms ease-in-out;
+	} /*sets transition for link hover, and when dark mode turns on/off*/
+} /*END OF DARK MODE SETTINGS*/
+@media (prefers-color-scheme: light) {
+	* {
+		transition: background 1000ms ease-in-out, color 250ms ease-in-out;
+	} /*sets transition for link hover, and when dark mode turns on/off*/
+} /*END OF LIGHT MODE SETTINGS*/
+/*this dark mode was coded for the blog by Jared. Questions? Contact me at jaredratcliff.com/contact*/
